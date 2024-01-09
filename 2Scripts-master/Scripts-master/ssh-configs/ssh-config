@@ -1,0 +1,16 @@
+# whatever name you want to ssh it from your local machine, can be anything call it foo
+Host prod.backend.marsplay
+
+# use the ip address of the remote server, using dns in this case
+HostName api.marsplay.co
+
+# The key pair you generated for your ec2-machine
+IdentityFile ~/.ssh/EC2_SSH_KEYS/API_Backend.pem
+
+# whatever user has the permissions to ssh into the remote server, 
+# for linux ami's its generally ec3-use
+User ec2-user
+
+# After doing this you can, if you wanted to connect to your remote machine from 
+# your favourite editor, install a remote development package on your editor
+# I like to use remote ssh from microsoft

@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# wipe-electron-caches wipes journald journals by rotating
+# them andvacuuming them down to 1 byte. This script
+# (depending on the system configuration) can be executed
+# both as regular and as a superuser.
+#
+# Usage: $ wipe-journal
+#        # wipe-journal
+
+journalctl --rotate && journalctl --vacuum-size=1

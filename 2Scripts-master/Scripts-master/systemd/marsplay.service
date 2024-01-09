@@ -1,0 +1,30 @@
+# service file for autostarting your docker builds on system reboot
+# I wrote this file so that in case of server crashes anyone can simply reboot the system and get the system running again
+# I paired this up with aws system checks, In case of failed system check I applied the restart policy. So your system never goes
+# out for more than 2 minutes even in case of seve crashes. 
+
+# /etc/systemd/system/marsplay.service
+
+[Unit]
+Description=Docker Compose Application Service
+Requires=docker.service     # This will start docker service, equivalent of calling sudo service start docker, yes it runs on root priviledges
+After=docker.service        # once the docker service has started we run the remaining
+
+[Service]
+WorkingDirectory=/home/ec2-user/marsplay-api/docker/prod    #The location of docker-compose file
+ExecStart=/usr/local/bin/docker-compose up                  #start script, 
+ExecStop=/usr/local/bin/docker-compose down                 #before system shutdown
+TimeoutStartSec=0
+Restart=on-failure                                          #restart policy in case it was shutdown
+StartLimitIntervalSec=60
+StartLimitBurst=3
+
+[Install]
+WantedBy=multi-user.target
+
+
+# After doing this generate a soft link
+# instead of creating a soft link manuall, save this file (marsplay.service), and instruct systemd to create a soft link
+# call sudo systemctl enable marsplay.service
+# Enable basically creates a configuration file in the conf.d directory where all startup files are stored. So when the system reboots you
+# can be sure that this file will be run by systemd

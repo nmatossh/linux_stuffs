@@ -1,0 +1,37 @@
+#!/bin/sh
+
+# jpgesser (jpeg messer) is a fun/entertainment script for
+# resizing image with worst quality possible, then rescaling it
+# back with worst quality again, resulting in a terrible quality
+# picture.
+#
+# Usage: jpgesser input [quality, 1 to 100] [size, >=1] output
+#
+# Parameters:
+#   quality - quality to apply on resize and rescale, 1 to 100
+#   size - size of rescaled image (width) before rescaling it back
+
+if [ "$#" -lt 2 ]; then
+    echo "Usage: $0 input [quality, 1 to 100] [size, >=1] output"
+    exit 1
+fi
+
+in="$1"
+out="$(eval 'echo "$'$#'"')"
+
+if [ "$#" -ge 3 ]; then quality="$2"; fi
+if [ "$#" -ge 4 ]; then size="$3"; fi
+
+_id="$(identify -ping -format "%w %h" "$in")"
+width="$(printf "%s" "$_id" | cut -f 1 -d " ")"
+height="$(printf "%s" "$_id" | cut -f 2 -d " ")"
+unset _id
+
+_tmp="$(mktemp)"
+trap 'rm "$_tmp"' EXIT
+
+convert -quality "$quality" -resize "${size}x-1" "$in" "$_tmp"
+convert -quality "$quality" -resize "${width}x$height" "$_tmp" "$out"
+rm "$_tmp"
+
+trap - EXIT

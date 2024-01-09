@@ -1,0 +1,42 @@
+### proton ge custom bin
+# wget https://github.com/GloriousEggroll/proton-ge-custom/releases/download/X.XX-GE-1/Proton-X.XX-GE-X.tar.gz
+## mkdir /home/$USER/.steam/root/compatibilitytools.d
+## tar -xf Proton*
+
+### d3d8to9 wrapper                                                                                                                                                       
+# wget https://github.com/crosire/d3d8to9/releases/download/v1.11.0/d3d8.dll
+
+### DirectX update
+# wget http://download.microsoft.com/download/1/7/1/1718CCC4-6315-4D8E-9543-8E28A4E18C4C/dxwebsetup.exe
+
+### VS2010 runtimes
+# wget http://download.microsoft.com/download/C/6/D/C6D0FD4E-9E53-4897-9B91-836EBA2AACD3/vcredist_x86.exe
+
+### deus ex
+# wget https://kentie.net/article/dxguide/files/DeusExe-v8.1.zip
+# wget https://www.cwdohnal.com/utglr/dxglr21.zip
+# wget https://kentie.net/article/d3d10drv/files/d3d10drv-v29.zip
+
+### dgvoodoo2
+# wget https://github.com/dege-diosg/dgVoodoo2/releases/download/v2.74.1/dgVoodoo2_74_1.zip
+
+### fallout2 sfall
+# wget -O sfall_4.3.0.1.7z https://sourceforge.net/projects/sfall/files/sfall/sfall_4.3.0.1.7z/download
+
+### gothic patches
+# wget https://github.com/shoober420/tfixmirror/raw/main/gothic_patch_108k.exe
+# wget https://github.com/shoober420/tfixmirror/raw/main/gothic1_playerkit-1.08k.exe
+# wget https://github.com/GothicFixTeam/GothicFix/releases/download/v1.8/G1Classic-SystemPack-1.8.exe
+# wget https://github.com/GothicFixTeam/GothicFix/releases/download/v1.8/Gothic1_PlayerKit-2.8.exe
+# wget http://www.freewebs.com/dracolich/inextremo.rar
+
+### gothic 2 patches
+# wget http://dl1.worldofplayers.ru/games/gothic/patches/G2/gothic2_fix-2.6.0.0-rev2.exe
+# wget https://github.com/GothicFixTeam/GothicFix/releases/download/v1.8/Gothic2_PlayerKit-2.8.exe
+# wget https://github.com/GothicFixTeam/GothicFix/releases/download/v1.8/G2NoTR-SystemPack-1.8.exe
+
+### thief
+# wget http://constancejill.free.fr/GamePatchesPC/GoldToDark%20-%20version%202014-08-02B.zip
+
+### vampire the masquerade bloodlines
+# wget -O VTMBup109rc5.1.exe https://www.moddb.com/downloads/mirror/194719/122/ea00345a0092918dfebe1d3b31578f4c/?referer=https%3A%2F%2Fwww.moddb.com%2Fmods%2Fvtmb-unofficial-patch%2Fdownloads

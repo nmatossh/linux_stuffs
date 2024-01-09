@@ -1,0 +1,32 @@
+#! /bin/sh
+
+
+case "$1" in
+status)
+echo "status"
+echo "JOBS Run ? " 
+echo "ID="
+cat /usr/local/samba/var/run/samba.pid
+
+;;
+stop)
+echo "stop"
+cat /usr/local/samba/var/run/samba.pid | xargs kill -9
+
+;;
+restart|force-reload)
+echo "restart"
+echo "Stop"
+cat /usr/local/samba/var/run/samba.pid | xargs kill -9
+sleep 1
+echo "Start"
+samba -i -M single & 2>/dev/null &
+
+;;
+*)
+echo "Usage: /etc/init.d/samba {status|stop |restart}"
+exit 1
+;;
+esac
+exit 0
+

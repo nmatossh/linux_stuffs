@@ -1,0 +1,23 @@
+#! /bin/sh
+
+
+case "$1" in
+start)
+
+echo "start"
+
+;;
+stop)
+echo "stop"
+
+;;
+restart|force-reload)
+echo "restart"
+
+;;
+*)
+echo "Usage: /etc/init.d/samba {start|stop |restart}"
+exit 1
+;;
+esac
+exit 0

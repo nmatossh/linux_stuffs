@@ -1,0 +1,8 @@
+This repository contains most of my scripts that I once wrote for my own
+use, but I feel like sharing them with everyone else now, even if they
+might not bring so much of a use.
+
+Every script is documented (see script file headers). All scripts that
+have #!/bin/sh shebang are POSIX-compliant, those that don't have it
+should be executed by the corresponding shell (by executing file itself
+and not passing it as an argument to bash/zsh/ksh.)

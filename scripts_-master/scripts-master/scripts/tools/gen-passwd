@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# gen-passwd generates new random password with the specified
+# length (optional, 16 by default.)
+#
+# Usage: $ gen-passwd [length]
+#
+# Parameters:
+#   length - password length in characters
+
+tr -dc 'a-zA-Z0-9' </dev/random | fold -w "${1:-16}" | head -n 1

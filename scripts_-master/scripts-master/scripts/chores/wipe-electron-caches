@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# wipe-electron-caches removes Electron-powered application caches
+# located traditionally in ~/.config
+#
+# Usage: $ wipe-electron-caches
+
+if [ -z "$HOME" ]; then HOME="$(echo ~"$(id -un)")"; fi
+find "$HOME/.config" -type d -name "* Cache" -o -name "Cache" -prune -exec rm -rf \{\} \;
