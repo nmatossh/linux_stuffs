@@ -1,2 +1,2 @@
-# linux_scripts
+# linux_stuffs
 Colección de scripts personales
